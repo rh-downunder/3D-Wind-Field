@@ -12,6 +12,16 @@ class Wind3D {
             options.useDefaultRenderLoop = false;
         }
 
+        var west = 106.0;
+        var south = -45;
+        var east = 161.0;
+        var north = -8;
+
+        var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
+
+        Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.5;
+        Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
+
         this.viewer = new Cesium.Viewer('cesiumContainer', options);
         this.scene = this.viewer.scene;
         this.camera = this.viewer.camera;
